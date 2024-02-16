@@ -12,8 +12,10 @@ let package = Package(
             targets: ["BKMExpressSPM"]),
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        .binaryTarget(name: "iOSBKMExpressSDK",
+                      path: "Framework/BKMExpressSDK.xcframework"),
         .target(
             name: "BKMExpressSPM"),
         .testTarget(
